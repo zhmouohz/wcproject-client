@@ -7,7 +7,7 @@ import configureStore from '../configureStore'
 import WaitContainer from './WaitContainer'
 
 
-export default class Root extends Component{
+export default class Root extends React.Component {
     render()
     {
         const store =configureStore()
