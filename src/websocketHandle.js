@@ -22,7 +22,7 @@ export default (dispatch, refresh) => new Promise((resolve, reject)=> {
         ws.onopen = (event) =>resolve(ws)
         ws.onmessage = (event)=> dispatch(refresh(transReturnList(event.data)))
         ws.onerror = (event) => new Error('websocket failed')
-        ws.onclose = (event) => new Error('websocket failed')
+    ws.onclose = (event) => console.log('websocket close');
     }
 )
 

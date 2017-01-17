@@ -68,6 +68,7 @@ class WaitContainer extends React.Component {
         const {dispatch} = this.props
         setCookie("username","",30)
         dispatch(logout())
+        websocketHandle.close()
     }
 
 
