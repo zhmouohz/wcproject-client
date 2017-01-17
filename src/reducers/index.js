@@ -28,33 +28,5 @@ const rootReducer = combineReducers({
     listChange,
     login
 })
-//
-// function listChange(state = {
-//     waitUsers: []
-// },action) {
-//     switch(action.type){
-//         case REFRESH:
-//             return {...state,waitUsers:action.newWaitList}
-//         default:
-//             return state
-//     }
-// }
-// function login(state = {
-//    user: undefined
-// },action) {
-//     switch(action.type){
-//         case LOGIN:
-//             return {...state,user:action.self}
-//         case LOGOUT:
-//             return {...state,user:undefined}
-//         default:
-//             return state
-//     }
-// }
-//
-//
-//
-//
-//
-//
+
 export default rootReducer

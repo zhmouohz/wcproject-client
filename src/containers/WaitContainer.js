@@ -10,8 +10,6 @@ import WCButton from '../components/WCButton'
 import {getCookie, setCookie} from '../cookies/cookies'
 import websocketConnection from '../websocketHandle'
 
-// let ws = new WebSocket("ws://localhost:8080/wc")
-
 let websocketHandle
 class WaitContainer extends React.Component {
     constructor(props) {
@@ -19,10 +17,6 @@ class WaitContainer extends React.Component {
         this.loginHandle = this.loginHandle.bind(this)
         this.logoutHandle = this.logoutHandle.bind(this)
         this.reserveHandle = this.reserveHandle.bind(this)
-        // const {dispatch} = this.props
-        // ws.onmessage = (event)=> {
-        //     dispatch(refresh(transReturnList(event.data)))
-        // }
 
 
 
@@ -45,17 +39,18 @@ class WaitContainer extends React.Component {
         e.preventDefault();
         const {user}=this.props
         if (user != null && user != undefined && user != null) {
+            console.log(user)
             websocketHandle.send(user)
         }
     }
 
 
-    transReturnList(returnList) {
-        if (returnList == "")
-            return []
-        else
-            return returnList.split(",").filter(name=>name != "")
-    }
+    // transReturnList(returnList) {
+    //     if (returnList == "")
+    //         return []
+    //     else
+    //         return returnList.split(",").filter(name=>name != "")
+    // }
 
     loginHandle(user) {
         websocketHandle.send("")
@@ -68,7 +63,7 @@ class WaitContainer extends React.Component {
         const {dispatch} = this.props
         setCookie("username","",30)
         dispatch(logout())
-        websocketHandle.close()
+        // websocketHandle.close()
     }
 
 
